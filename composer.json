@@ -1,0 +1,18 @@
+{
+    "name": "hamis-juma/workflow",
+    "description": "a package which will help developers and system administrators to customize na manage approval process for applications in laravel application",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "HamisJuma\\Workflow\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Hamis Juma",
+            "email": "hamisjuma1@gmail.com"
+        }
+    ],
+    "require": {}
+}
