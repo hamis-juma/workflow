@@ -10,9 +10,14 @@
     },
     "authors": [
         {
-            "name": "Hamis Juma",
+            "name":  "Hamis Juma",
             "email": "hamisjuma1@gmail.com"
         }
     ],
-    "require": {}
+    "require-dev": {
+        "orchestra/testbench": "^6.36"
+    },
+    "require": {
+        "inertiajs/inertia-laravel": "^0.6.10"
+    }
 }
