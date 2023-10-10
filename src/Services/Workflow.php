@@ -1,44 +1,23 @@
 <?php
 
-namespace App\Services\Workflow;
+namespace App\Services;
 
 use Carbon\Carbon;
-use App\Models\Auth\User;
-use App\Models\Leave\Leave;
-use App\Jobs\Workflow\SendEmail;
-use App\Models\Workflow\WfTrack;
-use App\Models\Workflow\WfModule;
-use App\Jobs\SendEmailToFinanceJob;
+use HamisJuma\Models\Auth\User;
+use HamisJuma\Workflow\Jobs\SendEmail;
+use HamisJuma\Workflow\Models\WfTrack;
+use HamisJuma\Workflow\Models\WfModule;
 use Illuminate\Support\Facades\Log;
-use App\Exceptions\GeneralException;
-use App\Exceptions\WorkflowException;
-use App\Models\Workflow\WfDefinition;
-use App\Repositories\taf\TafRepository;
+use HamisJuma\Workflow\Exceptions\GeneralException;
+use HamisJuma\Workflow\Exceptions\WorkflowException;
+use HamisJuma\Workflow\Models\WfDefinition;
 use Illuminate\Database\Eloquent\Model;
-use App\Repositories\JobOfferRepository;
-use App\Repositories\Tber\TberRepository;
-use App\Jobs\Workflow\WorkflowSendEmailJob;
-use App\Repositories\Leave\LeaveRepository;
-use App\Repositories\Report\ReportRepository;
+use HamisJuma\Workflow\Jobs\WorkflowSendEmailJob;
 use App\Events\Sockets\BroadcastWorkflowUpdated;
-use App\Repositories\Workflow\WfTrackRepository;
-use App\Repositories\Workflow\WfModuleRepository;
-use App\Repositories\Timesheet\TimesheetRepository;
-use App\Notifications\Workflow\WorkflowNotification;
-use App\Repositories\Retirement\RetirementRepository;
-use App\Repositories\Workflow\WfDefinitionRepository;
-use App\Repositories\Activity\ActivityReportRepository;
-use App\Repositories\Finance\FinanceActivityRepository;
-use App\Repositories\Requisition\RequisitionRepository;
-use App\Repositories\SafariAdvance\SafariAdvanceRepository;
-use App\Models\HumanResource\Interview\InterviewWorkflowReport;
-use App\Repositories\ProgramActivity\ProgramActivityRepository;
-use App\Repositories\ProgramActivity\ProgramActivityReportRepository;
-use App\Models\HumanResource\Advertisement\HireAdvertisementRequisition;
-use App\Repositories\HumanResource\PerformanceReview\PrReportRepository;
-use App\Repositories\HumanResource\Advertisement\AdvertisementRepository;
-use App\Repositories\Cov_Cec_Payment_Module\CovCecMonthlyPaymentRepository;
-use App\Repositories\HumanResource\HireRequisition\HireRequisitionRepository;
+use HamisJuma\Workflow\Repositories\WfTrackRepository;
+use HamisJuma\Workflow\Repositories\WfModuleRepository;
+use HamisJuma\Workflow\Notifications\WorkflowNotification;
+use HamisJuma\Workflow\Repositories\WfDefinitionRepository;
 
 /**
  * Class Workflow

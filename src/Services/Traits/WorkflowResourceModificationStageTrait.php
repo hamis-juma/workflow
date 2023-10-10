@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\Workflow\Traits;
+namespace HamisJuma\Workflow\Services\Traits;
 
 use Illuminate\Database\Eloquent\Model;
 

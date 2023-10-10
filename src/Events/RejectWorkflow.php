@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Events;
+namespace HamisJuma\Workflow\Events;
 
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Queue\SerializesModels;
@@ -9,7 +9,7 @@ use Illuminate\Broadcasting\PresenceChannel;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
-use App\Models\Workflow\WfTrack;
+use HamisJuma\Workflow\Models\WfTrack;
 
 class RejectWorkflow
 {

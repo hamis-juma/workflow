@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Events;
+namespace HamisJuma\Workflow\Events;
 
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Queue\SerializesModels;

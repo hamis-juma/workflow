@@ -1,16 +1,11 @@
 <?php
 
-namespace App\Services\Workflow;
+namespace HamisJuma\Workflow\Services;
 
-use App\Models\Auth\User;
-use App\Jobs\Workflow\SendEmail;
-use App\Jobs\SendEmailToFinanceJob;
-use App\Notifications\Workflow\WorkflowNotification;
-use App\Services\Workflow\Traits\WorkflowUserSelector;
-use App\Models\HumanResource\PerformanceReview\PrReport;
-use App\Models\HumanResource\HireRequisition\HrHireRequisitionJobApplicantRequest;
-use App\Models\Leave\Leave;
-use App\Models\Requisition\Requisition;
+use HamisJuma\Workflow\Models\Auth\User;
+use HamisJuma\Workflow\Jobs\SendEmail;
+use HamisJuma\Workflow\Notifications\WorkflowNotification;
+use HamisJuma\Workflow\Services\Traits\WorkflowUserSelector;
 
 class WorkflowAction
 {

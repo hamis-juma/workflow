@@ -1,13 +1,12 @@
 <?php
 
 
-namespace App\Services\Workflow\Traits;
+namespace HamisJuma\Workflow\Services\Traits;
 
-
-use App\Events\NewWorkflow;
+use HamisJuma\Workflow\Events\NewWorkflow;
 use Illuminate\Support\Facades\DB;
-use App\Exceptions\GeneralException;
-use App\Models\Workflow\WfModuleGroup;
+use HamisJuma\Workflow\Exceptions\GeneralException;
+use HamisJuma\Workflow\Models\WfModuleGroup;
 use Illuminate\Database\Eloquent\Model;
 
 trait WorkflowInitiator

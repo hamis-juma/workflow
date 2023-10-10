@@ -1,31 +1,16 @@
 <?php
 
 
-namespace App\Services\Workflow\Traits;
+namespace HamisJuma\Workflow\Services\Traits;
 
 
-use App\Exceptions\GeneralException;
-use App\Models\Auth\User;
-use App\Models\HumanResource\Interview\InterviewWorkflowReport;
-use App\Models\Unit\Designation;
-use App\Models\Workflow\UserWfDefinition;
-use App\Models\Workflow\WfDefinition;
-use App\Repositories\Activity\ActivityReportRepository;
-use App\Repositories\Budget\FiscalYearRepository;
-use App\Repositories\Finance\FinanceActivityRepository;
-use App\Repositories\JobOfferRepository;
-use App\Repositories\Leave\LeaveRepository;
-use App\Repositories\HumanResource\HireRequisition\HireRequisitionRepository;
-use App\Repositories\ProgramActivity\ProgramActivityRepository;
-use App\Repositories\Requisition\RequisitionRepository;
-use App\Repositories\Retirement\RetirementRepository;
-use App\Repositories\SafariAdvance\SafariAdvanceRepository;
-use App\Repositories\Timesheet\TimesheetRepository;
-use App\Repositories\Workflow\WfDefinitionRepository;
+use HamisJuma\Workflow\Exceptions\GeneralException;
+use HamisJuma\Workflow\Models\Auth\User;
+use HamisJuma\Workflow\Models\UserWfDefinition;
+use HamisJuma\Workflow\Models\WfDefinition;
+use HamisJuma\Workflow\Repositories\WfDefinitionRepository;
 use Illuminate\Support\Facades\DB;
-use App\Repositories\Access\UserRepository;
-use App\Repositories\HumanResource\PerformanceReview\PrReportRepository;
-use App\Repositories\Leave\LeaveDelegatedUserRepository;
+use HamisJuma\Workflow\Repositories\Access\UserRepository;
 
 trait WorkflowUserSelector
 {
