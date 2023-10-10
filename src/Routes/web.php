@@ -1,5 +1,7 @@
 <?php
 
+Route::get('', 'WorkflowController@index')->name('index');
+
 Route::get('defaults', 'WorkflowController@defaults')->name('defaults');
 Route::get('pending', 'WorkflowController@pending')->name('pending');
 Route::get('pending/get', 'WorkflowController@getPending')->name('pending.get');

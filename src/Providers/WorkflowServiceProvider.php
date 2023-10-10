@@ -10,13 +10,14 @@ class WorkflowServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->registerResources();
+//        $this->registerRoutes();
+        if($this->app->runningInConsole()){
+            $this->registerPublishing();
+        }
     }
 
     public function register()
     {
-        if($this->app->runningInConsole()){
-            $this->registerPublishing();
-        }
         $this->registerRoutes();
     }
 
@@ -27,23 +28,27 @@ class WorkflowServiceProvider extends ServiceProvider
 
     private function registerPublishing()
     {
-        $this->publishes([
-            __DIR__.'/../Config/Workflow.php' => config_path('Workflow.php')
-        ]);
+        $this->publishes([__DIR__.'/../Config/workflow.php' => config_path('workflow.php')],'workflow-config');
+        $this->publishes([__DIR__.'/../Database/migrations' => database_path('migrations')],'workflow-migrations');
     }
 
     private function registerRoutes()
     {
-        Route::group($this->routeConfig(), function (){
-            $this->loadRoutesFrom(__DIR__.'/../Routes/web.php');
-        });
+
+//        "repositories": {
+//        "dev-package": {
+//            "type": "path",
+//            "url": "/Users/hamis/Packages/workflow",
+//            "options": {
+//                "symlink": true
+//            }
+//        }
+//    }
+
+        Route::middleware(['web', 'auth'])
+            ->prefix(config('workflow.path'))
+            ->namespace('HamisJuma\Workflow\Http\Controllers')
+            ->group(__DIR__.'/../Routes/web.php');
     }
 
-    private function routeConfig()
-    {
-        return [
-            'prefix' => config_path('workflow.path'),
-            'namespace' => 'HamisJuma\Workflow\Http\Controllers'
-        ];
-    }
 }

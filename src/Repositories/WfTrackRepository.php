@@ -11,15 +11,15 @@ use HamisJuma\Workflow\Events\ApproveWorkflow;
 use HamisJuma\Workflow\Models\WfTrack;
 use HamisJuma\Workflow\Models\WfModule;
 use Illuminate\Support\Facades\DB;
-use App\Services\Workflow\Workflow;
+use HamisJuma\Workflow\Services\Workflow;
 use Illuminate\Support\Facades\Log;
-use App\Exceptions\GeneralException;
+use HamisJuma\Workflow\Exceptions\GeneralException;
 use HamisJuma\Workflow\Repositories\BaseRepository;
-use App\Exceptions\WorkflowException;
+use HamisJuma\Workflow\Exceptions\WorkflowException;
 use Illuminate\Database\Eloquent\Model;
-use App\Services\Scopes\IsApprovedScope;
-use App\Services\Workflow\Traits\WorkflowProcessLevelActionTrait;
-use App\Services\Workflow\Traits\WorkflowResourceModificationStageTrait;
+//use App\Services\Scopes\IsApprovedScope;
+use HamisJuma\Workflow\Services\Traits\WorkflowProcessLevelActionTrait;
+use HamisJuma\Workflow\Services\Traits\WorkflowResourceModificationStageTrait;
 
 /**
  * Class WfTrackRepository

@@ -2,7 +2,7 @@
 
 namespace HamisJuma\Workflow\Http\Controllers;
 
-use App\DataTables\WorkflowTrackDataTable;
+//use App\DataTables\WorkflowTrackDataTable;
 use HamisJuma\Workflow\Exceptions\GeneralException;
 use HamisJuma\Workflow\Exceptions\WorkflowException;
 use HamisJuma\Workflow\Http\Requests\UpdateWorkflowRequest;
@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use HamisJuma\Workflow\Repositories\WfModuleGroupRepository;
 use HamisJuma\Workflow\Repositories\WfDefinitionRepository;
-use HamisJuma\Workflow\Repositories\Access\UserRepository;
+//use HamisJuma\Workflow\Repositories\Access\UserRepository;
 use HamisJuma\Workflow\Models\WfDefinition;
 use HamisJuma\Workflow\Repositories\WfModuleRepository;
 use HamisJuma\Workflow\Repositories\WfTrackRepository;
@@ -19,7 +19,7 @@ use HamisJuma\Workflow\Services\Workflow;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
-use Yajra\Datatables\Datatables;
+//use Yajra\Datatables\Datatables;
 
 
 class workflowController extends Controller
@@ -59,15 +59,20 @@ class workflowController extends Controller
      * @param WfDefinitionRepository $definitions
      * @param UserRepository $users
      */
-    public function __construct(WfModuleGroupRepository $moduleGroup, WfDefinitionRepository $definitions, UserRepository $users)
+    public function __construct(WfModuleGroupRepository $moduleGroup, WfDefinitionRepository $definitions, /*UserRepository $users*/)
     {
         /* $this->middleware('access.routeNeedsPermission:assign_workflows'); */
         $this->middleware('auth');
         $this->moduleGroup = $moduleGroup;
         $this->definitions = $definitions;
-        $this->users = $users;
+        $this->users = [];
         $this->wf_tracks = new WfTrackRepository();
         $this->wf_modules = (new WfModuleRepository());
+    }
+
+    public function index()
+    {
+        dd("workflow works");
     }
 
     /**

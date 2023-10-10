@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services;
+namespace HamisJuma\Workflow\Services;
 
 use Carbon\Carbon;
 use HamisJuma\Models\Auth\User;
