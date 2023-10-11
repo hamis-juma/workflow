@@ -45,7 +45,7 @@ class WorkflowServiceProvider extends ServiceProvider
 //        }
 //    }
 
-        Route::middleware(['web', 'auth'])
+        Route::middleware(['web','auth'])
             ->prefix(config('workflow.path'))
             ->namespace('HamisJuma\Workflow\Http\Controllers')
             ->group(__DIR__.'/../Routes/web.php');

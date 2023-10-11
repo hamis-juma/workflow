@@ -17,9 +17,6 @@
     "require-dev": {
         "orchestra/testbench": "^6.36"
     },
-    "require": {
-        "inertiajs/inertia-laravel": "^0.6.10"
-    },
     "extra": {
         "laravel": {
             "providers" : [
